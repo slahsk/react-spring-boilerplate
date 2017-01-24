@@ -5,7 +5,21 @@ module.exports = {
     filename: 'bundle.js'
   },
   module : {
+    // rules:[
+    //   {
+    //     test : /\.js$/,
+    //     exclude : /(node_modules | bower_components)/,
+    //     enfore:'pre',
+    //     use:[{loader:'eslint-loader'}]
+    //   }
+    // ],
+
     loaders : [
+      {
+        test: /\.js$/,
+        loader: "eslint-loader",
+        exclude: /node_modules/
+      },
       {
         test : /\.js$/,
         exclude : /(node_modules | bower_components)/,
