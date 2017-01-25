@@ -5,6 +5,7 @@ import { createStore } from 'redux';
 import { Provider  } from 'react-redux';
 import App from './components/App';
 import counterApp from './reducers';
+// import DevTools from './reduxDevtools/DevTools';
 
 const store = createStore(counterApp);
 const appElement = document.getElementById('app');
@@ -15,7 +16,10 @@ const appElement = document.getElementById('app');
 
 ReactDOM.render(
     <Provider store = {store}>
-        <App />
+        <div>
+          <App />
+          {/* <DevTools /> */}
+        </div>
     </Provider>,
     appElement
 );
