@@ -6,18 +6,20 @@ import { Provider  } from 'react-redux';
 import App from './components/App';
 import counterApp from './reducers';
 // import DevTools from './reduxDevtools/DevTools';
+import Header from './components/Header';
 
 const store = createStore(counterApp);
 const appElement = document.getElementById('app');
 
 
 
-
-
 ReactDOM.render(
     <Provider store = {store}>
         <div>
-          <App />
+          <Header />
+          <div id="page-wrapper" className="page-wrapper">
+            <App />
+          </div>
           {/* <DevTools /> */}
         </div>
     </Provider>,
