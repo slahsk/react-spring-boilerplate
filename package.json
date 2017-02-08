@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/slahsk/react-boilerplate#readme",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.2",
@@ -39,10 +40,15 @@
     "eslint": "^3.14.0",
     "eslint-loader": "^1.6.1",
     "eslint-plugin-react": "^6.9.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.10.0",
+    "isomorphic-style-loader": "^1.1.0",
     "open-browser-webpack-plugin": "0.0.3",
+    "postcss-loader": "^1.2.2",
     "redux-devtools": "^3.3.2",
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.2.0",
+    "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"

@@ -8,6 +8,7 @@
  */
 
 import React from 'react';
+// import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import {
   Nav,
   NavItem,
@@ -16,11 +17,12 @@ import {
   ProgressBar,
 } from 'react-bootstrap';
 import Navbar, {Brand} from 'react-bootstrap/lib/Navbar';
+import './Header.css';
 // import $ from "jquery";
 // import Sidebar from '../Sidebar';
 
 const logo = require('./logo.png');
-export default class Header extends React.Component {
+class Header extends React.Component {
   render(){
     return (
         <div id="wrapper" className="content">
@@ -65,3 +67,4 @@ export default class Header extends React.Component {
       );
   }
 }
+export default Header;
