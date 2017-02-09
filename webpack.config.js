@@ -25,7 +25,8 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader : 'style-loader!css-loader?modules&localIdentName=[path][name]__[local]--[hash:base64:5]'
+         loader: "style-loader!css-loader" 
+        //loader : 'style-loader!css-loader?modules&localIdentName=[path][name]__[local]--[hash:base64:5]'
           // 'postcss-loader?pack=default',
           // 'isomorphic-style-loader'
 

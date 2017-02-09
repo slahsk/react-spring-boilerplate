@@ -7,6 +7,7 @@ import App from './components/App';
 import counterApp from './reducers';
 // import DevTools from './reduxDevtools/DevTools';
 import Header from './components/Header';
+import  'bootstrap/dist/css/bootstrap.css';
 
 const store = createStore(counterApp);
 const appElement = document.getElementById('app');
