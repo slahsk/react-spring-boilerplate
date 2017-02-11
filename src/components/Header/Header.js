@@ -17,9 +17,10 @@ import {
   ProgressBar,
 } from 'react-bootstrap';
 import Navbar, {Brand} from 'react-bootstrap/lib/Navbar';
+import Sidebar from '../Sidebar/Sidebar';
 import './Header.css';
 // import $ from "jquery";
-// import Sidebar from '../Sidebar';
+
 
 const logo = require('./logo.png');
 class Header extends React.Component {
@@ -62,6 +63,7 @@ class Header extends React.Component {
                   </MenuItem>
                 </NavDropdown>
               </ul>
+              <Sidebar />
             </Navbar>
         </div>
       );

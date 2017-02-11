@@ -3,11 +3,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider  } from 'react-redux';
-import App from './components/App';
+// import App from './components/App';
 import counterApp from './reducers';
 // import DevTools from './reduxDevtools/DevTools';
 import Header from './components/Header';
-import  'bootstrap/dist/css/bootstrap.css';
+
+import 'bootstrap/dist/css/bootstrap.css';
+import 'font-awesome/css/font-awesome.css';
+import './styles/sb-admin.css';
 
 const store = createStore(counterApp);
 const appElement = document.getElementById('app');
@@ -19,7 +22,7 @@ ReactDOM.render(
         <div>
           <Header />
           <div id="page-wrapper" className="page-wrapper">
-            <App />
+            {/* <App /> */}
           </div>
           {/* <DevTools /> */}
         </div>
