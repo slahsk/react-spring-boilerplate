@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {Link} from 'react-router';
 
 class Sidebar extends Component {
 
@@ -13,6 +13,9 @@ class Sidebar extends Component {
       samplePagesCollapsed: true,
     };
   }
+
+
+
 
   render() {
     return (
@@ -31,10 +34,9 @@ class Sidebar extends Component {
                </li>
 
                <li>
-
-                  <a href="" onClick={(e) => { e.preventDefault(); }} >
-                   <i className="fa fa-dashboard fa-fw" /> &nbsp;Dashboard
-                 </a>
+                  <Link to="/dashboard" activeClassName="active">
+                    <i className="fa fa-dashboard fa-fw" />&nbsp;Dashboard
+                  </Link>
                </li>
 
                <li>

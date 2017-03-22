@@ -15,6 +15,7 @@ import counterApp from './reducers';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
 import './styles/sb-admin.css';
+import test from './components/test';
 
 const store = createStore(counterApp);
 const appElement = document.getElementById('app');
@@ -25,7 +26,7 @@ ReactDOM.render(
     <Provider store = {store}>
       <Router history={browserHistory} >
          <Route path="/" component={App}>
-
+            <Route path="dashboard" component={test} title="About Us"/>
          </Route>
       </Router>
     </Provider>,

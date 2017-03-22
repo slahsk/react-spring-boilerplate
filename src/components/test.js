@@ -4,7 +4,7 @@ import Buttons from './Buttons';
 import Option from './Option';
 
 
-export default class App extends React.Component {
+export default class test extends React.Component {
     render(){
         return (
             <div style={ {textAlign: 'center'} }>
