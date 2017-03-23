@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var OpenBrowerPlugin = require('open-browser-webpack-plugin');
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   devtool : 'eval-source-map',
@@ -25,7 +26,8 @@ module.exports = {
       },
       {
         test: /\.css$/,
-         loader: "style-loader!css-loader"
+        //  loader: "style-loader!css-loader"
+         loader: ExtractTextPlugin.extract('style', 'css?modules')
         //loader : 'style-loader!css-loader?modules&localIdentName=[path][name]__[local]--[hash:base64:5]'
           // 'postcss-loader?pack=default',
           // 'isomorphic-style-loader'
@@ -75,8 +77,10 @@ module.exports = {
     ]
   },
   plugins : [
+      //new webpack.optimize.CommonsChunkPlugin("bootstrap.css", "font-awesome.css","sb-admin.css"),
       new OpenBrowerPlugin({url:'http://localhost:9090'}),
-      new ExtractTextPlugin("styles.css") //html 에 모든 css 파일을 하나로 묶어서 자동으로 링크를 생성 해준다.
+      new ExtractTextPlugin('style.css'),
+      new CopyWebpackPlugin([{ from: 'src/static' }])
   ],
   resolve: {
     extensions: ['', '.js']

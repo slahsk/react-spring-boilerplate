@@ -9,13 +9,12 @@ import counterApp from './reducers';
 
 // import DevTools from './reduxDevtools/DevTools';
 
- import { Router, Route, browserHistory} from 'react-router';
-
-
-import 'bootstrap/dist/css/bootstrap.css';
-import 'font-awesome/css/font-awesome.css';
-import './styles/sb-admin.css';
+import { Router, Route, browserHistory} from 'react-router';
 import test from './components/test';
+import Table from './routes/table/Table';
+
+
+
 
 const store = createStore(counterApp);
 const appElement = document.getElementById('app');
@@ -26,7 +25,8 @@ ReactDOM.render(
     <Provider store = {store}>
       <Router history={browserHistory} >
          <Route path="/" component={App}>
-            <Route path="dashboard" component={test} title="About Us"/>
+            <Route path="dashboard" component={test} title="dashboard"/>
+            <Route path="table" component={Table} title="table"/>
          </Route>
       </Router>
     </Provider>,

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
+import classNames from 'classnames';
 
 class Sidebar extends Component {
 
@@ -39,7 +40,7 @@ class Sidebar extends Component {
                   </Link>
                </li>
 
-               <li>
+               <li className={classNames({ active: !this.state.chartsElementsCollapsed })}>
                  <a
                    href=""
                    onClick={(e) => {
@@ -51,7 +52,14 @@ class Sidebar extends Component {
                    <i className="fa fa-bar-chart-o fa-fw" /> &nbsp;Charts
                    <span className="fa arrow" />
                  </a>
-                 <ul>
+                 <ul
+                   className={
+                     classNames({
+                       'nav nav-second-level': true,
+                       collapse: this.state.chartsElementsCollapsed,
+                     })
+                 }
+                 >
                    <li>
                      <a href="" onClick={(e) => { e.preventDefault(); }} >
                        FlotCharts
@@ -70,18 +78,18 @@ class Sidebar extends Component {
 
 
                <li>
-                 <a href="" onClick={(e) => { e.preventDefault(); }} >
+                 <Link to="/table">
                    <i className="fa fa-table fa-fw" /> &nbsp;Tables
-                 </a>
+                 </Link>
                </li>
 
                <li>
-                 <a href="" onClick={(e) => { e.preventDefault(); }} >
-                   <i className="fa fa-table fa-fw" /> &nbsp;Forms
-                 </a>
+                  <Link to="/forms">
+                    <i className="fa fa-table fa-fw" /> &nbsp;Forms
+                  </Link>
                </li>
 
-               <li>
+               <li className={classNames({ active: !this.state.uiElementsCollapsed })}>
                  <a
                    href=""
                    onClick={(e) => {
@@ -93,7 +101,12 @@ class Sidebar extends Component {
                    <i className="fa fa-edit fa-fw" /> UI Elements<span className="fa arrow" />
                  </a>
 
-                 <ul>
+                   <ul
+                     className={classNames({
+                       'nav nav-second-level': true,
+                       collapse: this.state.uiElementsCollapsed,
+                     })}
+                   >
                    <li>
                      <a href="" onClick={(e) => { e.preventDefault();  }} >
                        Panels And Wells
@@ -130,7 +143,7 @@ class Sidebar extends Component {
                  </ul>
                </li>
 
-               <li>
+               <li className={classNames({ active: !this.state.multiLevelDropdownCollapsed })}>
                  <a
                    href=""
                    onClick={(e) => {
@@ -145,14 +158,19 @@ class Sidebar extends Component {
                    &nbsp;Multi-Level Dropdown
                    <span className="fa arrow" />
                  </a>
-                 <ul>
+                   <ul
+                     className={
+                       classNames({
+                         'nav nav-second-level': true, collapse: this.state.multiLevelDropdownCollapsed,
+                       })}
+                   >
                    <li>
                      <a href="" onClick={(e) => { e.preventDefault(); }}>Second Level Item</a>
                    </li>
                    <li>
                      <a href="" onClick={(e) => { e.preventDefault(); }}>Second Level Item</a>
                    </li>
-                   <li>
+                   <li className={classNames({ active: !this.state.thirdLevelDropdownCollapsed })}>
                      <a
                        href=""
                        onClick={(e) => {
@@ -165,7 +183,13 @@ class Sidebar extends Component {
                      >
                        Third Level<span className="fa arrow" />
                      </a>
-                     <ul>
+                     <ul
+                       className={
+                         classNames({
+                           'nav nav-second-level': true,
+                           collapse: this.state.thirdLevelDropdownCollapsed,
+                         })}
+                     >
                        <li>
                          <a href="" onClick={(e) => { e.preventDefault(); }}>Third Level Item</a>
                        </li>
@@ -183,7 +207,7 @@ class Sidebar extends Component {
                  </ul>
                </li>
 
-               <li>
+               <li className={classNames({ active: !this.state.samplePagesCollapsed })}>
                  <a
                    href=""
                    onClick={(e) => {
@@ -198,7 +222,13 @@ class Sidebar extends Component {
                    &nbsp;Sample Pages
                    <span className="fa arrow" />
                  </a>
-                 <ul>
+                 <ul
+                   className={
+                     classNames({
+                       'nav nav-second-level': true,
+                       collapse: this.state.samplePagesCollapsed,
+                     })}
+                 >
                    <li>
                      <a href="" onClick={(e) => { e.preventDefault();  }} >
                        Blank
