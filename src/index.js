@@ -5,13 +5,16 @@ import { createStore } from 'redux';
 import { Provider  } from 'react-redux';
 import App from './components/App';
 import counterApp from './reducers';
+import { Router, Route, browserHistory, IndexRoute} from 'react-router';
 
+
+import Table from './routes/table/Table';
+import Forms from './routes/forms/Forms';
+import PanelWells from './routes/ui/PanelWells'
+import Buttons from './routes/ui/Buttons'
 
 // import DevTools from './reduxDevtools/DevTools';
 
-import { Router, Route, browserHistory} from 'react-router';
-import test from './components/test';
-import Table from './routes/table/Table';
 
 
 
@@ -21,23 +24,21 @@ const appElement = document.getElementById('app');
 
 
 ReactDOM.render(
-    <Provider store = {store}>
-      <Router history={browserHistory} >
-         <Route path="/" component={App}>
-            <Route path="dashboard" component={test} title="dashboard"/>
-            <Route path="table" component={Table} title="table"/>
-         </Route>
-      </Router>
-    </Provider>,
-    appElement
-);
+  <Provider store = {store}>
+    <Router history={browserHistory} >
+      <Route path="/" component={App} >
+        <IndexRoute component={Table} />
+        <Route path="dashboard" component={Table} title="dashboard"/>
+        <Route path="table" component={Table} title="table"/>
+        <Route path="forms" component={Forms} title="forms"/>
+        <Route path="ui">
+          <Route path="panels" component={PanelWells} title="panelWells"/>
+          <Route path="buttons" component={Buttons} title="buttons"/>
 
-// function component(){
-//   var element = document.createElement("div");
-//
-//   element.innerHTML = "Hello World";
-//
-//   return element;
-// }
-//
-// document.body.appendChild(component());
+
+        </Route>
+      </Route>
+    </Router>
+  </Provider>,
+  appElement
+);

@@ -7,54 +7,18 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 import React from 'react';
-// import emptyFunction from 'fbjs/lib/emptyFunction';
-import  './App.css';
 import Header from '../Header/Header';
-// import Feedback from '../Feedback';
+import CSSModules from 'react-css-modules';
+import styles from './App.css';
 // import Footer from '../Footer';
 
 class App extends React.Component {
 
-  // static propTypes = {
-  //   context: PropTypes.shape({
-  //     insertCss: PropTypes.func,
-  //     setTitle: PropTypes.func,
-  //     setMeta: PropTypes.func,
-  //   }),
-  //   children: PropTypes.element.isRequired,
-  //   error: PropTypes.object,
-  // };
-
-  // static childContextTypes = {
-  //   insertCss: PropTypes.func.isRequired,
-  //   setTitle: PropTypes.func.isRequired,
-  //   setMeta: PropTypes.func.isRequired,
-  // };
-
-  getChildContext() {
-    // const context = this.props.context;
-    // return {
-    //   insertCss: context.insertCss || emptyFunction,
-    //   setTitle: context.setTitle || emptyFunction,
-    //   setMeta: context.setMeta || emptyFunction,
-    // };
-  }
-
-  componentWillMount() {
-    // const { insertCss } = this.props.context;
-    // this.removeCss = insertCss(s);
-  }
-
-  componentWillUnmount() {
-
-    // this.removeCss();
-  }
 
   render(){
     return(<div>
       <Header />
-      <div id="page-wrapper" className="page-wrapper">
-        {/* <App /> */}
+    <div styleName="page-wrapper" className="page-wrapper">
         {this.props.children}
       </div>
       {/* <DevTools /> */}
@@ -68,4 +32,4 @@ class App extends React.Component {
 
 }
 
-export default App;
+export default CSSModules(App, styles,{allowMultiple : true});

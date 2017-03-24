@@ -17,7 +17,8 @@ import {
 } from 'react-bootstrap';
 import Navbar, {Brand} from 'react-bootstrap/lib/Navbar';
 import Sidebar from '../Sidebar/Sidebar';
-import './Header.css';
+import CSSModules from 'react-css-modules';
+import styles from './Header.css';
 
 
 
@@ -25,7 +26,7 @@ const logo = require('./logo.png');
 class Header extends React.Component {
   render(){
     return (
-        <div id="wrapper" className="content">
+        <div className="content" styleName="wrapper">
             <Navbar fluid={true}  style={ {margin: 0} }>
               <Brand>
                 <span>
@@ -68,4 +69,4 @@ class Header extends React.Component {
       );
   }
 }
-export default Header;
+export default CSSModules(Header, styles,{allowMultiple : true});
