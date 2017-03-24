@@ -8,7 +8,6 @@
  */
 
 import React from 'react';
-// import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import {
   Nav,
   NavItem,
@@ -19,7 +18,7 @@ import {
 import Navbar, {Brand} from 'react-bootstrap/lib/Navbar';
 import Sidebar from '../Sidebar/Sidebar';
 import './Header.css';
-// import $ from "jquery";
+
 
 
 const logo = require('./logo.png');

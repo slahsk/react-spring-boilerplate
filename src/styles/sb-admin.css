@@ -8,6 +8,8 @@ body {
     background-color: #f8f8f8;
 }
 
+
+
 #page-wrapper {
     padding: 20px;
     min-height: 568px;
@@ -86,6 +88,8 @@ body {
     right: 0;
     left: auto;
 }
+
+
 
 .btn-outline {
     color: inherit;

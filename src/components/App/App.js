@@ -8,7 +8,7 @@
  */
 import React from 'react';
 // import emptyFunction from 'fbjs/lib/emptyFunction';
-// import s from './App.css';
+import  './App.css';
 import Header from '../Header/Header';
 // import Feedback from '../Feedback';
 // import Footer from '../Footer';

@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var OpenBrowerPlugin = require('open-browser-webpack-plugin');
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+
 
 module.exports = {
   devtool : 'eval-source-map',
@@ -27,7 +27,7 @@ module.exports = {
       {
         test: /\.css$/,
         //  loader: "style-loader!css-loader"
-         loader: ExtractTextPlugin.extract('style', 'css?modules')
+         loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[path][name]__[local]--[hash:base64:5]')
         //loader : 'style-loader!css-loader?modules&localIdentName=[path][name]__[local]--[hash:base64:5]'
           // 'postcss-loader?pack=default',
           // 'isomorphic-style-loader'
@@ -79,8 +79,7 @@ module.exports = {
   plugins : [
       //new webpack.optimize.CommonsChunkPlugin("bootstrap.css", "font-awesome.css","sb-admin.css"),
       new OpenBrowerPlugin({url:'http://localhost:9090'}),
-      new ExtractTextPlugin('style.css'),
-      new CopyWebpackPlugin([{ from: 'src/static' }])
+      new ExtractTextPlugin('style.css')
   ],
   resolve: {
     extensions: ['', '.js']

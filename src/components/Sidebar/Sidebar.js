@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
 import classNames from 'classnames';
+import CSSModules from 'react-css-modules';
+import styles from './Sidebar.css';
+
 
 class Sidebar extends Component {
 
@@ -19,11 +22,13 @@ class Sidebar extends Component {
 
 
   render() {
+
+
     return (
-        <div className="navbar-default sidebar" style={{ marginLeft: '-20px' }} role="navigation">
-           <div className="sidebar-nav navbar-collapse collapse">
+        <div className="navbar-default" styleName="sidebar" style={{ marginLeft: '-20px' }} role="navigation">
+           <div className="collapse navbar-collapse" styleName="sidebar-nav navbar-collapse">
              <ul className="nav in" id="side-menu">
-               <li className="sidebar-search">
+               <li styleName="sidebar-search">
                  <div className="input-group custom-search-form">
                    <input type="text" className="form-control" placeholder="Search..." />
                    <span className="input-group-btn">
@@ -35,12 +40,12 @@ class Sidebar extends Component {
                </li>
 
                <li>
-                  <Link to="/dashboard" activeClassName="active">
+                  <Link to="/dashboard" activeClassName="" >
                     <i className="fa fa-dashboard fa-fw" />&nbsp;Dashboard
                   </Link>
                </li>
 
-               <li className={classNames({ active: !this.state.chartsElementsCollapsed })}>
+               <li styleName={classNames({ active: !this.state.chartsElementsCollapsed })}>
                  <a
                    href=""
                    onClick={(e) => {
@@ -50,15 +55,20 @@ class Sidebar extends Component {
                    }}
                  >
                    <i className="fa fa-bar-chart-o fa-fw" /> &nbsp;Charts
-                   <span className="fa arrow" />
+                   <span className="fa" styleName="fa arrow" />
                  </a>
                  <ul
                    className={
                      classNames({
-                       'nav nav-second-level': true,
+                       'nav': true,
                        collapse: this.state.chartsElementsCollapsed,
                      })
-                 }
+                   }
+
+                   styleName={
+                     classNames("nav-second-level")
+                   }
+
                  >
                    <li>
                      <a href="" onClick={(e) => { e.preventDefault(); }} >
@@ -89,7 +99,7 @@ class Sidebar extends Component {
                   </Link>
                </li>
 
-               <li className={classNames({ active: !this.state.uiElementsCollapsed })}>
+               <li styleName={classNames({ active: !this.state.uiElementsCollapsed })}>
                  <a
                    href=""
                    onClick={(e) => {
@@ -98,14 +108,20 @@ class Sidebar extends Component {
                    }); return false;
                    }}
                  >
-                   <i className="fa fa-edit fa-fw" /> UI Elements<span className="fa arrow" />
+                    <i className="fa fa-edit fa-fw" />
+                    UI Elements
+                    <span className="fa" styleName="fa arrow" />
                  </a>
 
                    <ul
                      className={classNames({
-                       'nav nav-second-level': true,
+                       'nav': true,
                        collapse: this.state.uiElementsCollapsed,
                      })}
+
+                     styleName={
+                       classNames("nav-second-level")
+                     }
                    >
                    <li>
                      <a href="" onClick={(e) => { e.preventDefault();  }} >
@@ -143,7 +159,7 @@ class Sidebar extends Component {
                  </ul>
                </li>
 
-               <li className={classNames({ active: !this.state.multiLevelDropdownCollapsed })}>
+               <li styleName={classNames({ active: !this.state.multiLevelDropdownCollapsed })}>
                  <a
                    href=""
                    onClick={(e) => {
@@ -161,8 +177,13 @@ class Sidebar extends Component {
                    <ul
                      className={
                        classNames({
-                         'nav nav-second-level': true, collapse: this.state.multiLevelDropdownCollapsed,
+                         'nav': true,
+                          collapse: this.state.multiLevelDropdownCollapsed,
                        })}
+
+                       styleName={
+                         classNames("nav-second-level")
+                       }
                    >
                    <li>
                      <a href="" onClick={(e) => { e.preventDefault(); }}>Second Level Item</a>
@@ -181,14 +202,18 @@ class Sidebar extends Component {
                          return false;
                        }}
                      >
-                       Third Level<span className="fa arrow" />
+                       Third Level<span className="fa" styleName="fa arrow" />
                      </a>
                      <ul
                        className={
                          classNames({
-                           'nav nav-second-level': true,
+                           'nav': true,
                            collapse: this.state.thirdLevelDropdownCollapsed,
                          })}
+
+                         styleName={
+                           classNames("nav-second-level")
+                         }
                      >
                        <li>
                          <a href="" onClick={(e) => { e.preventDefault(); }}>Third Level Item</a>
@@ -207,7 +232,7 @@ class Sidebar extends Component {
                  </ul>
                </li>
 
-               <li className={classNames({ active: !this.state.samplePagesCollapsed })}>
+               <li styleName={classNames({ active: !this.state.samplePagesCollapsed })}>
                  <a
                    href=""
                    onClick={(e) => {
@@ -220,14 +245,18 @@ class Sidebar extends Component {
                  >
                    <i className="fa fa-files-o fa-fw" />
                    &nbsp;Sample Pages
-                   <span className="fa arrow" />
+                   <span className="fa" styleName="fa arrow" />
                  </a>
                  <ul
                    className={
                      classNames({
-                       'nav nav-second-level': true,
+                       'nav': true,
                        collapse: this.state.samplePagesCollapsed,
                      })}
+
+                     styleName={
+                       classNames("nav-second-level")
+                     }
                  >
                    <li>
                      <a href="" onClick={(e) => { e.preventDefault();  }} >
@@ -252,5 +281,4 @@ class Sidebar extends Component {
   }
 }
 
-
-export default Sidebar;
+export default CSSModules(Sidebar, styles,{allowMultiple : true});

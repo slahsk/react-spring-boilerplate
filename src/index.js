@@ -15,7 +15,6 @@ import Table from './routes/table/Table';
 
 
 
-
 const store = createStore(counterApp);
 const appElement = document.getElementById('app');
 
