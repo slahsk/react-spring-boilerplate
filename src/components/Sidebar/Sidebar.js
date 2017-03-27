@@ -200,12 +200,12 @@ class Sidebar extends Component {
                             </a>
                             <ul className={classNames({'nav': true, collapse: this.state.samplePagesCollapsed})} styleName="nav-second-level">
                                 <li>
-                                  <Link to="/blank">
+                                  <Link to="/samplepages/blank">
                                     Blank
                                   </Link>
                                 </li>
                                 <li>
-                                  <Link to="/login">
+                                  <Link to="/samplepages/login">
                                     Login
                                   </Link>
                                 </li>
