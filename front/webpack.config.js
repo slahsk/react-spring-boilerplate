@@ -4,11 +4,13 @@ var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
+
 module.exports = {
   devtool : 'eval-source-map',
   entry :__dirname + '/src/index.js',
   output : {
-    path: __dirname ,
+    path: __dirname+'/build/',
+    // path: __dirname,
     publicPath: '/build/',
     filename: 'bundle.js'
   },
@@ -79,7 +81,13 @@ module.exports = {
   plugins : [
       //new webpack.optimize.CommonsChunkPlugin("bootstrap.css", "font-awesome.css","sb-admin.css"),
       new OpenBrowerPlugin({url:'http://localhost:9090'}),
-      new ExtractTextPlugin('style.css')
+      new ExtractTextPlugin('style.css'),
+      new webpack.DefinePlugin({
+         'process.env' : {
+            'NODE_ENV': '"development"'
+          }
+      })
+
   ],
   resolve: {
     extensions: ['', '.js']

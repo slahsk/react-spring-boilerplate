@@ -6,11 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/webpack --config=webpack.config.js --progress",
-    "dev": "./node_modules/.bin/webpack-dev-server --config=webpack.config.js --progress --inline --hot --display-error-details --port 9090"
+    "dev": "./node_modules/.bin/webpack-dev-server --config=webpack.config.js --progress --inline --hot --display-error-details --port 9090 --history-api-fallback"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/slahsk/react-boilerplate.git"
+    "url": "https://github.com/slahsk/react-boilerplate.git"
   },
   "author": "",
   "license": "ISC",

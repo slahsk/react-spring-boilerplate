@@ -26,7 +26,8 @@ const appElement = document.getElementById('app');
 
 ReactDOM.render(
     <Provider store={store}>
-    <Router history={browserHistory}> 
+    <Router history={browserHistory}>
+
         <Route path="/" component={App}>
             <IndexRoute component={Table}/>
             <Route path="dashboard" component={Table} title="dashboard"/>
@@ -42,7 +43,7 @@ ReactDOM.render(
             </Route>
             <Route path="samplepages">
                 <Route path="blank" component={Blank} title="blank"/>
-                <Route path="login" component={Login} title="login"/>
+                  <Route path="/login" component={Login} title="login"/>
             </Route>
         </Route>
     </Router>

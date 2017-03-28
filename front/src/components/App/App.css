@@ -10,7 +10,7 @@
 
 @import '/node_modules/bootstrap/dist/css/bootstrap.css';
 @import '/node_modules/font-awesome/css/font-awesome.css';
-@import '/src/styles/sb-admin.css';
+@import '/build/sb-admin.css';
 
 /*! React Starter Kit | MIT License | https://www.reactstarterkit.com/ */
 
