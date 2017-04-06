@@ -23,11 +23,3 @@ export const counter = (state = counterInitialState, action) => {
             return state;
     }
 };
-
-
-export const extra = (state = { value: 'this_is_extra_reducer' }, action) => {
-    switch(action.type) {
-        default:
-            return state;
-    }
-}

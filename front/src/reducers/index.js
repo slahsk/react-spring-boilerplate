@@ -1,10 +1,9 @@
 import { combineReducers } from 'redux';
-import {counter, extra} from 'reducers/testReducer';
+import {counter} from 'reducers/testReducer';
 
 
 const reducers = combineReducers({
-    counter,
-    extra
+    counter
 });
 
 export default reducers;

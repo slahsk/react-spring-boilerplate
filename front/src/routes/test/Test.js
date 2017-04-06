@@ -7,7 +7,7 @@ import Option from './Option';
 export default class Test extends React.Component {
     render(){
         return (
-            <div style={ {textAlign: 'center'} }>
+            <div>
                 <Counter/>
                 <Option/>
                 <Buttons/>

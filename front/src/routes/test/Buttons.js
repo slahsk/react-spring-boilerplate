@@ -28,6 +28,9 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-Buttons = connect(undefined, mapDispatchToProps)(Buttons);
+
+
+
+Buttons = connect(null , mapDispatchToProps)(Buttons);
 
 export default Buttons;
