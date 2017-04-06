@@ -10,26 +10,25 @@ import React from 'react';
 import Header from '../Header/Header';
 import CSSModules from 'react-css-modules';
 import styles from './App.css';
-// import Footer from '../Footer';
+
+import DevTools from './DevTools';
 
 class App extends React.Component {
 
+    render() {
+        return (
+            <div>
+                <Header/>
+                <div styleName="page-wrapper" className="page-wrapper">
+                    {this.props.children}
+                </div>
+                <DevTools/>
 
-  render(){
-    return(<div>
-      <Header />
-    <div styleName="page-wrapper" className="page-wrapper">
-        {this.props.children}
-      </div>
-      {/* <DevTools /> */}
+            </div>
 
-
-      </div>
-
-    );
-  }
-
+        );
+    }
 
 }
 
-export default CSSModules(App, styles,{allowMultiple : true});
+export default CSSModules(App, styles, {allowMultiple: true});

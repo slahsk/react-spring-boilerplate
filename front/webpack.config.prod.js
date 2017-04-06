@@ -8,7 +8,7 @@ process.env.NODE_ENV = 'production';
 module.exports = {
   entry :__dirname + '/src/index.js',
   output : {
-    path: __dirname+'/build/',
+    path: '../springboot/src/main/resources/static/build',
     filename: 'bundle.js'
   },
   module : {
@@ -91,7 +91,10 @@ module.exports = {
 
   ],
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['', '.js'],
+    root: [
+      path.resolve('./src') //imoㅔrt시 root 위치 지정
+    ]
   }
 
 

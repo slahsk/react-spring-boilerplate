@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {createStore} from 'redux';
+import {createStore, compose } from 'redux';
 import {Provider} from 'react-redux';
-import App from './components/App';
-import counterApp from './reducers';
+import App from './components/App/APP';
+import reducers from './reducers';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
+import { persistState } from 'redux-devtools';
+
+import DevTools from 'components/App/DevTools';
 
 import Table from './routes/table/Table';
 import Forms from './routes/forms/Forms';
@@ -14,6 +17,7 @@ import Notification from './routes/ui/Notification';
 import Typography from './routes/ui/Typography';
 import Icons from './routes/ui/Icons';
 import Grid from './routes/ui/Grid';
+import Test from './routes/test/Test';
 
 import Blank from './routes/samplepages/Blank';
 import Login from './routes/samplepages/Login';
@@ -21,8 +25,22 @@ import Login from './routes/samplepages/Login';
 
 // import DevTools from './reduxDevtools/DevTools';
 
-const store = createStore(counterApp);
+
 const appElement = document.getElementById('app');
+
+
+
+
+const enhancer = compose(
+  DevTools.instrument(),
+  persistState(
+    window.location.href.match(
+      /[?&]debug_session=([^&#]+)\b/
+    )
+  )
+);
+
+const store = createStore(reducers,enhancer);
 
 ReactDOM.render(
     <Provider store={store}>
@@ -43,8 +61,9 @@ ReactDOM.render(
             </Route>
             <Route path="samplepages">
                 <Route path="blank" component={Blank} title="blank"/>
-                  <Route path="/login" component={Login} title="login"/>
+                <Route path="/login" component={Login} title="login"/>
             </Route>
+            <Route path="test" component={Test} title="test"/>
         </Route>
     </Router>
 </Provider>, appElement);

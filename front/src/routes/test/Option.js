@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setDiff } from '../actions';
+import { setDiff } from 'actions';
 
 class Option extends React.Component {
     constructor(props) {

@@ -215,6 +215,11 @@ class Sidebar extends Component {
                         <li>
                             <a href="http://www.strapui.com/">Premium React Themes</a>
                         </li>
+                        <li>
+                            <Link to="/test">
+                                <i className="fa fa-dashboard fa-fw"/>&nbsp;test
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </div>
