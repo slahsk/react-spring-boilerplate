@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {createStore, compose } from 'redux';
+import {createStore, compose, applyMiddleware  } from 'redux';
 import {Provider} from 'react-redux';
+import thunk from 'redux-thunk';
 import App from './components/App/APP';
 import reducers from './reducers';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
@@ -32,6 +33,7 @@ const appElement = document.getElementById('app');
 
 
 const enhancer = compose(
+  applyMiddleware(thunk),
   DevTools.instrument(),
   persistState(
     window.location.href.match(
@@ -40,7 +42,7 @@ const enhancer = compose(
   )
 );
 
-const store = createStore(reducers,enhancer);
+const store = createStore(reducers, enhancer);
 
 ReactDOM.render(
     <Provider store={store}>
