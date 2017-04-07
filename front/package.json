@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "./node_modules/.bin/webpack --config=webpack.config.prod.js --progress --profile --colors",
-    "dev": "./node_modules/.bin/webpack-dev-server --config=webpack.config.js --progress --inline --hot --display-error-details --port 9090 --history-api-fallback"
+    "dev": "./node_modules/.bin/webpack-dev-server --config=webpack.config.js --progress --inline --hot --display-error-details  --history-api-fallback"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
     "react-css-modules": "^4.1.0",

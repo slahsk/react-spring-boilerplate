@@ -79,8 +79,10 @@ module.exports = {
     root: [
       path.resolve('./src') //import시 root 위치 지정
     ]
+  },
+  devServer: {
+    port:9090
   }
-
 
 
 }

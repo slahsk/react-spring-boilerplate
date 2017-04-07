@@ -3,7 +3,9 @@
 const counterInitialState = {
     value: 0,
     diff: 1,
-    aaa: null
+    aaa: {
+      firstName : null
+    }
 };
 
 export const counter = (state = counterInitialState, action) => {
@@ -22,7 +24,7 @@ export const counter = (state = counterInitialState, action) => {
             });
         case TEST :
           return Object.assign({}, state, {
-              aaa : action.data
+              aaa : action.aaa
           });
         default:
             return state;

@@ -4,7 +4,7 @@ import Buttons from './Buttons';
 import Option from './Option';
 import { connect } from 'react-redux';
 import { test } from '../../actions';
-
+import $ from 'jquery';
 
 
 class Test extends React.Component {
@@ -18,29 +18,30 @@ class Test extends React.Component {
                 <Option/>
                 <Buttons/>
               <button onClick={this.props.testButton}>Test</button>
-            {this.props.data}
+            {this.props.aaa.firstName}
             </div>
         );
     }
 
 }
 
+let testFunction = (dispatch, getState) => {
+    return fetch('http://localhost:8090/api/test')
+    .then( response => response.json())
+    .then(json => dispatch(test(json)))
 
-let testFunction = function(){
-  return function (dispatch, getState) {
-    return fetch('http://md5.jsontest.com/?text=%5Btext')
-      .then(
-      sauce => {
-        dispatch(test(sauce));
-      }
-    );
   };
 
+//내부에서 데이터를 사용하기 위해서는 맵핑 해줘야 한다.
+let mapStateToProps = (state) => {
+    return {
+        aaa: state.counter.aaa
+    };
 }
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        testButton: () => dispatch(testFunction())
+        testButton: () => dispatch(testFunction)
     }
 }
 
@@ -48,4 +49,4 @@ let mapDispatchToProps = (dispatch) => {
 
 
 
-export default connect(null , mapDispatchToProps)(Test)
+export default connect(mapStateToProps , mapDispatchToProps)(Test)
